@@ -2,34 +2,41 @@
 <html>
 
 <head>
-    <title>Canvas Follow Mouse</title>
+    <title>Follow Mouse!</title>
+
     <style>
-        canvas {
-            border: #333 10px solid;
+        body {
+            min-width: 100%;
+            min-height: 100%;
         }
 
-        body {
-            padding: 50px;
+        #moveItem {
+            width: 35px;
+            height: 35px;
+            background-color: #FF3333;
+            position: absolute;
+            border-radius: 50%;
         }
     </style>
 </head>
 
 <body>
-    <canvas id="myCanvas" width="550px" height="350px"></canvas>
-
+    <div id="moveItem"></div>
     <script>
-        var canvas = document.querySelector("#myCanvas");
-        var context = canvas.getContext("2d");
-        function update() {
-            context.beginPath();
-            context.arc(100, 100, 50, 0, 2 * Math.PI, true);
-            context.fillStyle = "#FF6A6A";
-            context.fill();
+        var item = document.querySelector("#moveItem");
+        var itemRect = item.getBoundingClientRect();
+
+        document.addEventListener("mousemove", followMouse, false);
+
+        function followMouse(e) {
+            var xPos = e.pageX - itemRect.width / 2;
+            var yPos = e.pageY - itemRect.height / 2;
+
+            console.log(xPos + " " + yPos);
+
+            item.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
         }
-        update();
-
     </script>
-
 </body>
 
 </html>
