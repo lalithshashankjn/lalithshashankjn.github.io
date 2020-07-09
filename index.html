@@ -29,6 +29,20 @@
 
     <!-- Load our React component. -->
     <script src="like_button.js"></script>
+
+    <img onmouseover="bigImage(this)" onmouseout="smallImage(this)" border="0" src="myPicture.jpg" alt="MyPicture" width="64" height="64">
+    <script>
+        function bigImage(picture) {
+            picture.style.height = "400px";
+            picture.style.width = "400px";
+        }
+    </script>
+    <script>
+        function smallImage(picture) {
+            picture.style.height = "64px";
+            picture.style.width = "64px";            
+        }
+    </script>
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
