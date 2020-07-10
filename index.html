@@ -1,28 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Follow Mouse!</title>
+    <title>My Github Portfolio!</title>
     <style>
-        body {
-            background-color: greenyellow;
-            min-width: 100%;
-            min-height: 100%;
-            cursor: none;
+        html, body {
+            margin: 0;
+            padding: 0;
         }
 
-        #moveItem {
-            width: 35px;
-            height: 35px;
-            background-color: royalblue;
+        body{
+            background-color:greenyellow;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        #tracker {
             position: absolute;
-            border-radius: 50%;
+            top: 0;
+            right: 10px;
+            background-color: white;
         }
         
     </style>
 </head>
-<body>    
-    <div id="moveItem"></div>
+<body>
+    <div id="tracker"></div>
+
+    <!--<div id="moveItem"></div>-->
     <script src="mouseFollower.js"></script>
-    
+
 </body>
 </html>
