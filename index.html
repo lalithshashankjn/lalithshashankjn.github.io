@@ -1,42 +1,28 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
     <title>Follow Mouse!</title>
-
     <style>
         body {
+            background-color: greenyellow;
             min-width: 100%;
             min-height: 100%;
+            cursor: none;
         }
 
         #moveItem {
             width: 35px;
             height: 35px;
-            background-color: #FF3333;
+            background-color: royalblue;
             position: absolute;
             border-radius: 50%;
         }
+        
     </style>
 </head>
-
-<body>
+<body>    
     <div id="moveItem"></div>
-    <script>
-        var item = document.querySelector("#moveItem");
-        var itemRect = item.getBoundingClientRect();
-
-        document.addEventListener("mousemove", followMouse, false);
-
-        function followMouse(e) {
-            var xPos = e.pageX - itemRect.width / 2;
-            var yPos = e.pageY - itemRect.height / 2;
-
-            console.log(xPos + " " + yPos);
-
-            item.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
-        }
-    </script>
+    <script src="mouseFollower.js"></script>
+    
 </body>
-
 </html>
