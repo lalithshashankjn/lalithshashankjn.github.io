@@ -1,5 +1,4 @@
-body {
-    /*    display:none;*/
+body {    
     background-color: steelblue;
     height: 100vh;
     width: 100vw;
@@ -20,12 +19,17 @@ body {
     margin: 0;
     justify-content: center;
     align-content: center;
+/*    animation:fade-in 1s ease-in normal;*/
 }
 
     .load_frame .txt {
         background-color: transparent;
+        animation:fade-in 2s ease-in normal;
     }
 
+#like_button_container{
+    background-color:transparent;
+}
 
 @keyframes fade-in {
     from {
