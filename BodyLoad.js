@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $(".btn").click(function () {
-        $(".btn").fadeOut("fast");;
+    $(".load_frame").click(function () {
+        $(".load_frame").fadeOut("fast");;
     });
 });
 

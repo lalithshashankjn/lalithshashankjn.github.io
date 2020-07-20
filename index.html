@@ -5,21 +5,25 @@
     <title>My Web Profile</title>
     <link rel="stylesheet" href="MyStyleSheet.css" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script type="text/javascript" src="BodyLoad.js"></script>    
-</head>
-<body>
-
-    <button class="btn">Welcome</button>
-
-    <!-- We will put our React component inside this div. -->
-    <div id="like_button_container"></div>
-
+    <script type="text/javascript" src="BodyLoad.js"></script>
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+
+    <button class="load_frame">
+        <div class="txt">Welcome</div>
+    </button>
+
+    <!-- We will put our React component inside this div. -->
+    <div id="like_button_container"></div>
 
     <!-- Load our React component. -->
     <script src="like_button.js"></script>
+
+
+
 </body>
 </html>
