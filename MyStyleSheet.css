@@ -4,12 +4,11 @@ header{
     padding:0px;
 }
 
-html{
-    margin:0;
-    padding:0;
-    height:auto;
-    overflow:hidden;
-    
+html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow: hidden;    
 }
 
 body {
@@ -19,9 +18,15 @@ body {
     max-height: 100vh;
     align-content: center;
     padding: 0;
-    margin: 0;
-    overflow-y: scroll;
+    margin: 0;   
+    overflow-y:scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width:none;
+}
+
+body::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 .load_frame {
@@ -34,8 +39,8 @@ body {
     padding: 0;
     margin: 0;
     justify-content: center;
-    align-content: center;
-/*    animation:fade-in 1s ease-in normal;*/
+    align-content: center;    
+    /*    animation:fade-in 1s ease-in normal;*/
 }
 
     .load_frame .txt {
@@ -43,12 +48,31 @@ body {
         text-decoration-style:solid;
         text-emphasis-color:white;
         text-emphasis-style:double-circle;
-        text
         animation:fade-in 2s ease-in normal;
     }
 
-#like_button_container{
-    background-color:transparent;
+.container{
+    width:100vw;
+    height:100%;
+    background-color:red;
+}
+
+.Spanner {
+    justify-content: center;
+    align-content:center;
+    text-align:center;    
+}
+
+.Spanner .btn_Butt {
+    display: inline-block;
+    border-radius: 50%;
+    width:100px;
+    height:100px;
+    line-height:50px;    
+}
+
+.btn_Butt:hover{
+    background-color:black;
 }
 
 @keyframes fade-in {
