@@ -1,22 +1,126 @@
+
 /*mainbody*/
 body {
     background-color: black;
-    justify-content: center;
+    justify-content: center;      
 }
 
-/*means sphere*/
-#sfear {    
-    width: 90vh;
-    height: 90vh;
-    background-image: radial-gradient(red, orange,blue,green);
-    border-radius: 50%;
+#container {
+    width: 100vh;
+    height: 100vh;
+    margin: auto;
+    padding: 0px;
+    background-color: transparent;
+    justify-content:center;
+    align-content:center;
+    display:flex;
+}
+
+
+#container.sfear {
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 60%;
+    border-top-right-radius: 60%;
+    border-top-left-radius: 30%;    
+    background-image: radial-gradient(green 0%, red 25%,blue 50%, yellow 75%);
+}
+
+#halfContainer {
+    width: 100vh;
+    height: 50vh;
+    display:flex;
     margin:auto;
-    vertical-align:middle;
-    animation: rotation 3s infinite;
+}
+
+#TL {
+    height: 50vh;
+    width: 50vh;
+    background-image: radial-gradient(at bottom right, green 0%, red 25%,blue 50%, yellow 75%);
+    border-top-left-radius: 85%;
+}
+
+    #TL:hover {
+        transform: translate(-20px,-20px)
+    }
+
+
+#TR {
+    height: 50vh;
+    width: 50vh;
+    background-image: radial-gradient(at bottom left, green 0%, red 25%,blue 50%, yellow 75%);
+    border-top-right-radius: 90%;
+}
+
+    #TR:hover {
+        transform: translate(20px,-20px); 
+        transform:scale(0.8);
+    }
+
+
+#BL {
+    height: 50vh;
+    width: 50vh;
+    background-image: radial-gradient(at top right, green 0%, red 25%,blue 50%, yellow 75%);
+    border-bottom-left-radius: 95%;
+}
+
+    #BL:hover {
+        transform: translate(-20px,20px)
+    }
+
+#BR {
+    height: 50vh;
+    width: 50vh;
+    background-image: radial-gradient(at top left, green 0%, red 25%,blue 50%, yellow 75%);
+    border-bottom-right-radius: 100%;
+}
+
+    #BR:hover {
+        transform: translate(20px,20px);        
+    }
     
+
+@keyframes translateTL {
+    from {
+        transform: translate(0px,0px);
+    }
+
+    to {
+        transform: translate(-20px,-20px);        
+    }
 }
 
-@keyframes rotation {
+@keyframes translateTR {
+    from {
+        transform: translate(0px,0px);
+    }
 
+    to {
+        transform: translate(20px,-20px);
+    }
 }
+
+@keyframes translateBL {
+    from {
+        transform: translate(0px,0px);
+    }
+
+    to {
+        transform: translate(-20px,20px);
+    }
+}
+
+@keyframes translateBR {
+    from {
+        transform: translate(0px,0px);
+    }
+
+    to {
+        transform: translate(20px,20px);
+    }
+}
+
+
+
+    
     
