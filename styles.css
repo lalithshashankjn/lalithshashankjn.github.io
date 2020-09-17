@@ -1,0 +1,22 @@
+/*mainbody*/
+body {
+    background-color: black;
+    justify-content: center;
+}
+
+/*means sphere*/
+#sfear {    
+    width: 90vh;
+    height: 90vh;
+    background-image: radial-gradient(red, orange,blue,green);
+    border-radius: 50%;
+    margin:auto;
+    vertical-align:middle;
+    animation: rotation 3s infinite;
+    
+}
+
+@keyframes rotation {
+
+}
+    

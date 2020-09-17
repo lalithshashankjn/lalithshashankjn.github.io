@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\resources",
+    "\\resources\\p5",
+    "\\resources\\p5\\empty-example"
   ],
-  "SelectedNode": "\\BodyLoad.js",
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }
