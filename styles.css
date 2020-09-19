@@ -1,10 +1,13 @@
 /* rotation is achieved using tutorial in https://w3bits.com/css-earth/ */
-body{    
-    align-content:center;
-    overflow-x:hidden;
-    overflow-y:visible;    
-    margin:0;    
+body {
+    align-content: center;
+    overflow-x: hidden;
+    overflow-y: visible;
+    margin: 0;
+    min-width: 200px;
+    min-height: 200px;
 }
+
 
 .sphereContainer{
     height:100vh;
@@ -12,15 +15,8 @@ body{
     position:absolute;    
     background-color:black;
     z-index:2;
-}
-
-
-.mainContent {
-    z-index: 1;    
-    height: 100vh;
-    width: 100vw;
-    position:absolute;
-    display:none;
+    min-width:inherit;
+    min-height:inherit;
 }
 
 
@@ -88,4 +84,13 @@ body{
     100% {
         background-position: 1000px 0;
     }
+}
+
+
+.mainContent {
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: none;
 }
