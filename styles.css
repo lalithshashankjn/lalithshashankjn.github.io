@@ -14,9 +14,9 @@ body {
     width:100vw;
     position:absolute;    
     background-color:black;
-    z-index:2;
+    z-index:3;
     min-width:inherit;
-    min-height:inherit;
+    min-height:inherit;    
 }
 
 
@@ -24,15 +24,11 @@ body {
     /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
     position: relative;
     /* [2] Set-up the dimensions and spacing */
-    width: 50%;
-    height: 100%;
-    margin:auto;
-    
-    vertical-align:central;
+    margin:auto;    
     
     /* [3] Prepare the animation effects */
     transition: transform 1000ms linear;
-    animation: rotate 5s linear infinite; /* This is going to be defined in the next step */
+    animation: rotate 5s linear infinite;  This is going to be defined in the next step 
     /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
     color: transparent;
     border-radius: 50%;
@@ -43,7 +39,6 @@ body {
     transform:scale(0.9);
     background-color:white;
 }
-
     
     #welcomesphere:after {
         /* [1] Break the flow to show this as an overlay */
@@ -82,7 +77,7 @@ body {
     }
 
     100% {
-        background-position: 1000px 0;
+        background-position: 1875px 0;
     }
 }
 
