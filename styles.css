@@ -2,17 +2,27 @@
 body{    
     align-content:center;
     overflow-x:hidden;
-    overflow-y:visible;
-    background-color:black;
-    margin:0;
+    overflow-y:visible;    
+    margin:0;    
 }
 
 .sphereContainer{
     height:100vh;
     width:100vw;
     position:absolute;    
-    background-color:white;
+    background-color:black;
+    z-index:2;
 }
+
+
+.mainContent {
+    z-index: 1;    
+    height: 100vh;
+    width: 100vw;
+    position:absolute;
+    display:none;
+}
+
 
 #welcomesphere {
     /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
@@ -35,6 +45,7 @@ body{
     /* [5] Position things in a 3d space */
     transform-style: preserve-3d;
     transform:scale(0.9);
+    background-color:white;
 }
 
     

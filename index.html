@@ -8,9 +8,11 @@
     <script type="text/javascript" src="script.js"></script>
 
 </head>
-<body>
-    <div class="sphereContainer">
-        <div class="sphereContainer" id="welcomesphere" onmouseover="pauseAnimation()" 
-             onclick="hideThis()" onmouseleave="resumeAnimation()"></div>
+<body onload="initializeSphere()" onresize="initializeSphere()">
+    <div class="mainContent" ondblclick="showThis()">helllo</div>    
+    <div class="sphereContainer" onclick="hideThis()" >
+        <div id="welcomesphere" onmouseover="pauseAnimation()"
+             onmouseleave="resumeAnimation()"></div>
     </div>
+
 </body>
