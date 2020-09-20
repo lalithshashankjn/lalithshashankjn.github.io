@@ -3,23 +3,26 @@
 </title>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="globeStyle.css" />
     <link rel="stylesheet" href="contentStyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/jquerykeyframes@1.0.8/dist/jquery.keyframes.min.js'></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script type="text/javascript" src="sphere.js"></script>
-    <script type="text/javascript" src="content.js"></script>
-
+    <script type="text/javascript" src="middleLayer.js"></script>
+    <script type="text/javascript" src="contentLoader.js"></script>
 </head>
 <body onload="initializeSphere()" onresize="resizeSphere()">
-
     <div class="sphereContainer" onclick="hideAndFadeOut()">
         <div id="welcomesphere"></div>
     </div>
     <!--<div class="mainContent" ondblclick="showThis()">-->
-    <div class="mainContent" onmousemove="showOrHide(event)" >
-        <div id="centreBall"ondblclick="showThis()"></div>
+    <div class="mainContent" onmousemove="showOrHide(event)" ondblclick="showThis()" onclick="clickedBox(event)">
+        <div id="centreBall"></div>
     </div>
     <div id="box">
         <div id="halfContainer">
@@ -30,5 +33,8 @@
             <div id="BL"></div>
             <div id="BR"></div>
         </div>
+    </div>
+    <div id="contentContainer" onclick="closeOut()">
+        HELLOWPOEBIR
     </div>
 </body>

@@ -48,6 +48,7 @@ function playAnimation() {
 function hideThis() {
     Promise.resolve($(".sphereContainer").fadeOut(500)).then(
         $(".mainContent").fadeIn(2000));
+    $("#box").fadeIn(1000);  
     setSizes();
 }
 
@@ -77,6 +78,8 @@ function hideAndFadeOut() {
 
 function showThis() {
     Promise.resolve(shrinkThis('reverse')).then($(".sphereContainer").fadeIn());
+    $("#box").fadeOut(10);    
+    $("#contentContainer").fadeOut(10);    
     
 }
 

@@ -1,4 +1,9 @@
 /* rotation is achieved using tutorial in https://w3bits.com/css-earth/ */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     align-content: center;
     overflow-x: hidden;

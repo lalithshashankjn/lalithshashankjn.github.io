@@ -7,7 +7,6 @@ styling ideas taken from https://css-tricks.com/scooped-corners-in-2018/#svg-fle
 }
 
 
-
 .mainContent {
     z-index: 1;
     height: 100vh;
@@ -15,7 +14,7 @@ styling ideas taken from https://css-tricks.com/scooped-corners-in-2018/#svg-fle
     position: absolute;
     display: none;
     color: green;
-    background-color: transparent;        
+    background-color: transparent;       
 }
 
 #centreBall {
@@ -54,6 +53,7 @@ styling ideas taken from https://css-tricks.com/scooped-corners-in-2018/#svg-fle
     width: 50%;
     background-color: red;
     opacity:0;
+    padding-left:100px;
 
 }
 
@@ -73,5 +73,9 @@ styling ideas taken from https://css-tricks.com/scooped-corners-in-2018/#svg-fle
     opacity:0;
 }
 
-   
-    
+
+#contentContainer {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
