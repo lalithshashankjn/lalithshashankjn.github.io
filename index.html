@@ -2,19 +2,33 @@
     My Landing
 </title>
 <head>
-    <link rel="stylesheet" href="styles.css" />
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="globeStyle.css" />
+    <link rel="stylesheet" href="contentStyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="jquery.keyframes.js"></script>-->
     <script src='https://cdn.jsdelivr.net/npm/jquerykeyframes@1.0.8/dist/jquery.keyframes.min.js'></script>
-    <script ssrc="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>-->
+    <script type="text/javascript" src="sphere.js"></script>
+    <script type="text/javascript" src="content.js"></script>
 
 </head>
 <body onload="initializeSphere()" onresize="resizeSphere()">
-    <div class="mainContent" ondblclick="showThis()"></div>    
-    <div class="sphereContainer" onclick="hideAndFadeOut()" >
+
+    <div class="sphereContainer" onclick="hideAndFadeOut()">
         <div id="welcomesphere"></div>
     </div>
-
+    <!--<div class="mainContent" ondblclick="showThis()">-->
+    <div class="mainContent" onmousemove="showOrHide(event)" >
+        <div id="centreBall"ondblclick="showThis()"></div>
+    </div>
+    <div id="box">
+        <div id="halfContainer">
+            <div id="TL"></div>
+            <div id="TR"></div>
+        </div>
+        <div id="halfContainer">
+            <div id="BL"></div>
+            <div id="BR"></div>
+        </div>
+    </div>
 </body>

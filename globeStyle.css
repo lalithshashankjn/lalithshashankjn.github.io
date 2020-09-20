@@ -6,6 +6,7 @@ body {
     margin: 0;
     min-width: 200px;
     min-height: 200px;
+    background-color:transparent;
 }
 
 
@@ -13,7 +14,7 @@ body {
     height: 100vh;
     width: 100vw;
     position: absolute;
-    background-color: black;
+    background-color: transparent;
     z-index: 3;
     min-width: inherit;
     min-height: inherit;
@@ -22,14 +23,13 @@ body {
     justify-content: center;
 }
 
-
 #welcomesphere {
     /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
     position: relative;
     /* [2] Set-up the dimensions and spacing */
     margin: auto;    
     /* [3] Prepare the animation effects */
-    transition: transform 1000ms linear;
+    /*transition: transform 1000ms linear;*/
     /*animation: rotate 5s linear infinite;  /*This is going to be defined in the next step */
     /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
     color: transparent;
@@ -73,23 +73,4 @@ body {
         background: radial-gradient(circle at center, #fff, #000);
     }
 
-    
 
-@keyframes rotate {
-    0% {
-        background-position: 0 0;
-    }
-
-    100% {
-        background-position: 1875px 0;
-    }
-}
-
-
-.mainContent {
-    z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    display: none;
-}

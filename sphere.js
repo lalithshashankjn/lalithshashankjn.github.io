@@ -1,15 +1,13 @@
 let welcomeSphere;
 let body;
-let debug = true;
 
 
 function initializeSphere() {    
     body = document.getElementsByTagName("body");   
     welcomeSphere = document.getElementById("welcomesphere");        
-    $(".mainContent").fadeOut("fast");    
+    $(".mainContent").fadeOut(10);    
     resizeSphere();
     playAnimation();
-    
 }
 
 function resizeSphere() {
@@ -27,7 +25,8 @@ function resizeSphere() {
     else {
         $("#welcomesphere").width(containerWidth);
         $("#welcomesphere").height(containerHeight);
-    }    
+    }
+    setSizes();
 }
 
 function pauseAnimation() {    
@@ -44,13 +43,12 @@ function playAnimation() {
     }]);
     $('#welcomesphere').playKeyframe(
         ' scaled-rotate 5s linear infinite');
-
-    console.log("Resuming animation");
 }
 
 function hideThis() {
-    Promise.resolve($(".sphereContainer").fadeOut(1000)).then(
-        $(".mainContent").fadeIn(10000));
+    Promise.resolve($(".sphereContainer").fadeOut(500)).then(
+        $(".mainContent").fadeIn(2000));
+    setSizes();
 }
 
 function shrinkThis(animationDirection) {
@@ -61,7 +59,7 @@ function shrinkThis(animationDirection) {
     }]);
     $('#welcomesphere').playKeyframe({
         name: 'scaleanime', // name of the keyframe you want to bind to the selected element
-        duration: '2s', // [optional, default: 0, in ms] how long you want it to last in milliseconds
+        duration: '1s', // [optional, default: 0, in ms] how long you want it to last in milliseconds
         timingFunction: 'linear', // [optional, default: ease] specifies the speed curve of the animation
         delay: '0s', //[optional, default: 0s]  how long you want to wait before the animation starts
         iterationCount: '1', //[optional, default:1]  how many times you want the animation to repeat
@@ -78,12 +76,11 @@ function hideAndFadeOut() {
 }
 
 function showThis() {
-    let prom = Promise.resolve(shrinkThis('reverse')).then($(".sphereContainer").fadeIn());
+    Promise.resolve(shrinkThis('reverse')).then($(".sphereContainer").fadeIn());
     
 }
 
 function getBGpxPosition(x){    
-    let y = (x *1690)/ 844;
-    console.log("width: ", x, " position: ", y);
+    let y = (x *1690)/ 844;    
     return y.toString();
 }
