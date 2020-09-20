@@ -4,17 +4,17 @@
 <head>
     <link rel="stylesheet" href="styles.css" />
     <meta charset="utf-8" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<script type="text/javascript" src="jquery.keyframes.js"></script>-->
     <script src='https://cdn.jsdelivr.net/npm/jquerykeyframes@1.0.8/dist/jquery.keyframes.min.js'></script>
+    <script ssrc="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 
 </head>
 <body onload="initializeSphere()" onresize="resizeSphere()">
-    <div class="mainContent" ondblclick="showThis()">helllo</div>    
-    <div class="sphereContainer" onclick="hideThis()" >
-        <div id="welcomesphere" onmouseover="pauseAnimation()"
-             onmouseleave="resumeAnimation()"></div>
+    <div class="mainContent" ondblclick="showThis()"></div>    
+    <div class="sphereContainer" onclick="hideAndFadeOut()" >
+        <div id="welcomesphere"></div>
     </div>
 
 </body>

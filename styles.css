@@ -9,14 +9,17 @@ body {
 }
 
 
-.sphereContainer{
-    height:100vh;
-    width:100vw;
-    position:absolute;    
-    background-color:black;
-    z-index:3;
-    min-width:inherit;
-    min-height:inherit;    
+.sphereContainer {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: black;
+    z-index: 3;
+    min-width: inherit;
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -24,11 +27,10 @@ body {
     /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
     position: relative;
     /* [2] Set-up the dimensions and spacing */
-    margin:auto;    
-    
+    margin: auto;    
     /* [3] Prepare the animation effects */
     transition: transform 1000ms linear;
-    animation: rotate 5s linear infinite;  This is going to be defined in the next step 
+    /*animation: rotate 5s linear infinite;  /*This is going to be defined in the next step */
     /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
     color: transparent;
     border-radius: 50%;
@@ -36,8 +38,8 @@ body {
     background-size: cover;
     /* [5] Position things in a 3d space */
     transform-style: preserve-3d;
-    transform:scale(0.9);
-    background-color:white;
+    transform: scale(0.9);
+    background-color: white;
 }
     
     #welcomesphere:after {
@@ -70,6 +72,8 @@ body {
         border-radius: 50%;
         background: radial-gradient(circle at center, #fff, #000);
     }
+
+    
 
 @keyframes rotate {
     0% {

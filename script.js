@@ -5,10 +5,11 @@ let debug = true;
 
 function initializeSphere() {    
     body = document.getElementsByTagName("body");   
-    welcomeSphere = document.getElementById("welcomesphere");    
-    welcomeSphere.style.animationPlayState = "running";
+    welcomeSphere = document.getElementById("welcomesphere");        
     $(".mainContent").fadeOut("fast");    
     resizeSphere();
+    playAnimation();
+    
 }
 
 function resizeSphere() {
@@ -27,36 +28,61 @@ function resizeSphere() {
         $("#welcomesphere").width(containerWidth);
         $("#welcomesphere").height(containerHeight);
     }    
-
-    toBGPosition = getBGpxPosition($("#welcomesphere").width())+ ' 0';
-    $.keyframe.define([{
-        name: 'scaled-rotate',
-        from: {'background-position': '0 0'},
-        to: { 'background-position': toBGPosition }
-    }]);
-    $('#welcomesphere').playKeyframe(
-        ' scaled-rotate 5s linear infinite');
 }
 
 function pauseAnimation() {    
     welcomeSphere.style.animationPlayState = "paused";
+    console.log("pausing Animation");
 }
 
-function resumeAnimation() {    
-    welcomeSphere.style.animationPlayState = "running";
+function playAnimation() {    
+    toBGPosition = getBGpxPosition($("#welcomesphere").width()) + ' 0';
+    $.keyframe.define([{
+        name: 'scaled-rotate',
+        from: { 'background-position': '0 0' },
+        to: { 'background-position': toBGPosition }
+    }]);
+    $('#welcomesphere').playKeyframe(
+        ' scaled-rotate 5s linear infinite');
+
+    console.log("Resuming animation");
 }
 
 function hideThis() {
-    $(".sphereContainer").fadeOut("fast");
-    $(".mainContent").fadeIn("slow");
+    Promise.resolve($(".sphereContainer").fadeOut(1000)).then(
+        $(".mainContent").fadeIn(10000));
+}
+
+function shrinkThis(animationDirection) {
+    $.keyframe.define([{
+        name: 'scaleanime',
+        from: { 'transform': 'scale(0.9)' },
+        to: { 'transform': 'scale(0.4)'}
+    }]);
+    $('#welcomesphere').playKeyframe({
+        name: 'scaleanime', // name of the keyframe you want to bind to the selected element
+        duration: '2s', // [optional, default: 0, in ms] how long you want it to last in milliseconds
+        timingFunction: 'linear', // [optional, default: ease] specifies the speed curve of the animation
+        delay: '0s', //[optional, default: 0s]  how long you want to wait before the animation starts
+        iterationCount: '1', //[optional, default:1]  how many times you want the animation to repeat
+        direction: animationDirection, //[optional, default: 'normal']  which direction you want the frames to flow
+        fillMode: 'forwards', //[optional, default: 'forward']  how to apply the styles outside the animation time, default value is forwards
+        complete: function () { playAnimation() }//[optional] Function fired after the animation is complete. If repeat is infinite, the function will be fired every time the animation is restarted.
+    });
+    
+}
+
+function hideAndFadeOut() {    
+    Promise.resolve(shrinkThis('normal')).then(hideThis())
+    
 }
 
 function showThis() {
-    $(".sphereContainer").fadeIn();
+    let prom = Promise.resolve(shrinkThis('reverse')).then($(".sphereContainer").fadeIn());
+    
 }
 
-function getBGpxPosition(x){
-    //let y = 48970850 + (-43.40962 - 48970850) / (1 + (x / 30829810) ^ 0.9658882);
+function getBGpxPosition(x){    
     let y = (x *1690)/ 844;
     console.log("width: ", x, " position: ", y);
     return y.toString();
