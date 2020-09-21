@@ -10,8 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/jquerykeyframes@1.0.8/dist/jquery.keyframes.min.js'></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>-->
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script crossorigin="" src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script type="text/javascript" src="sphere.js"></script>
     <script type="text/javascript" src="middleLayer.js"></script>
     <script type="text/javascript" src="contentLoader.js"></script>
@@ -21,8 +21,8 @@
         <div id="welcomesphere"></div>
     </div>
     <!--<div class="mainContent" ondblclick="showThis()">-->
-    <div class="mainContent" onmousemove="showOrHide(event)" ondblclick="showThis()" onclick="clickedBox(event)">
-        <div id="centreBall"></div>
+    <div class="mainContent" onmousemove="showOrHide(event)" onclick="clickedBox(event)">
+        <div id="centreBall" ondblclick="showThis()" ></div>
     </div>
     <div id="box">
         <div id="halfContainer">
@@ -34,7 +34,8 @@
             <div id="BR"></div>
         </div>
     </div>
-    <div id="contentContainer" ondblclick="fadeout('#contentContainer');">
-        HELLO WORLD
+    <div id="contentContainer" ondblclick="scrolltoID('.mainContent',this.id)">
+         <!--onclick="document.location.href='BlogPages/blogHome.html' "-->
+        <a href='BlogPages/blogHome.html'>CLICK HERE TO GOTO BLOG</a>
     </div>
 </body>

@@ -3,19 +3,24 @@ let containerHeight;
 
 function setSizes() {
     containerWidth = $(".mainContent").width();
-    containerHeight = $(".mainContent").height();    
+    containerHeight = $(".mainContent").height();         
     if ((containerWidth < containerHeight)) {
         $("#centreBall").height(containerWidth);
         $("#centreBall").width(containerWidth);
+        
     }
     else if ((containerWidth > containerHeight)) {
         $("#centreBall").width(containerHeight);
         $("#centreBall").height(containerHeight);
+       
     }
     else {
         $("#centreBall").width(containerWidth);
         $("#centreBall").height(containerHeight);
+        
     }   
+    $("#contentContainer").width(containerWidth);
+    $("#contentContainer").height(containerHeight);
     $(".mainContent").css("display", "flex");        
 }
 
