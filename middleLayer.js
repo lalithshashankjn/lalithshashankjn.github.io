@@ -1,5 +1,15 @@
 let containerWidth;
 let containerHeight;
+let dontReadMouse = false;
+
+function mouseOnCircle(tOrF) {
+    if (tOrF) {
+        dontReadMouse = true;
+    }
+    else {
+        dontReadMouse = false;
+    }
+}
 
 function setSizes() {
     containerWidth = $(".mainContent").width();
@@ -25,24 +35,31 @@ function setSizes() {
 }
 
 function showOrHide(event) {
-    var x = event.clientX;
-    var y = event.clientY;
-    var coords = "X coords: " + x + ", Y coords: " + y;    
-    if ((x < (0.5 * containerWidth)) && (y < (0.5 * containerHeight))) {
-        setOpacities(1, 0, 0, 0);
+    
+    if (!dontReadMouse) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var coords = "X coords: " + x + ", Y coords: " + y;
+        if ((x < (0.5 * containerWidth)) && (y < (0.5 * containerHeight))) {
+            setOpacities(1, 0, 0, 0);
+        }
+        else if ((x > (0.5 * containerWidth)) && (y < (0.5 * containerHeight))) {
+            //TR
+            setOpacities(0, 1, 0, 0);
+        }
+        else if ((x < (0.5 * containerWidth)) && (y > (0.5 * containerHeight))) {
+            //BL
+            setOpacities(0, 0, 1, 0);
+        }
+        else if ((x > (0.5 * containerWidth)) && (y > (0.5 * containerHeight))) {
+            //BR
+            setOpacities(0, 0, 0, 1);
+        }
     }
-    else if ((x > (0.5 * containerWidth)) && (y < (0.5 * containerHeight))) {
-        //TR
-        setOpacities(0, 1, 0, 0);
+    else {
+        setOpacities(0, 0, 0, 0);
     }
-    else if ((x < (0.5 * containerWidth)) && (y > (0.5 * containerHeight))) {
-        //BL
-        setOpacities(0, 0, 1, 0);
-    }
-    else if ((x > (0.5 * containerWidth)) && (y > (0.5 * containerHeight))) {
-        //BR
-        setOpacities(0, 0, 0, 1);
-    }}
+}
 
 function setOpacities(tl, tr, bl, br) {    
     if (tl == 1) {

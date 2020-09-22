@@ -21,10 +21,10 @@
         <div id="welcomesphere"></div>
     </div>
     <!--<div class="mainContent" ondblclick="showThis()">-->
-    <div class="mainContent" onmousemove="showOrHide(event)" onclick="clickedBox(event)">
-        <div id="centreBall" ondblclick="showThis()" ></div>
+    <div class="mainContent" onmousemove="showOrHide(event)"  onclick="clickedBox(event)">
+        <div id="centreBall" onmouseover="mouseOnCircle(true)" onmouseout="mouseOnCircle(false)" ondblclick="showThis()" ></div>
     </div>
-    <div id="box">
+    <div id="box" >
         <div id="halfContainer">
             <div id="TL"></div>
             <div id="TR"></div>
@@ -34,7 +34,7 @@
             <div id="BR"></div>
         </div>
     </div>
-    <div id="contentContainer" ondblclick="scrolltoID('.mainContent',this.id)">
+    <div id="contentContainer" ondblclick="scrolltoID('.mainContent','#contentContainer')">
          <!--onclick="document.location.href='BlogPages/blogHome.html' "-->
         <a href='BlogPages/blogHome.html'>CLICK HERE TO GOTO BLOG</a>
     </div>

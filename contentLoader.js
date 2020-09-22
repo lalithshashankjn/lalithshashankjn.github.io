@@ -1,6 +1,8 @@
-function clickedBox() {
-    $("#contentContainer").css({ display: "flex" });
-    fadeout("#contentContainer",'reverse');
+function clickedBox(event) {
+    if (!dontReadMouse) {
+        $("#contentContainer").css({ display: "flex" });
+        fadeout("#contentContainer", 'reverse');
+    }
 }
 
 function scrollUp() {
@@ -50,4 +52,3 @@ function fadeout(id, dir='normal') {
     });
     
 }
-
