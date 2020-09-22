@@ -24,6 +24,7 @@ styling ideas taken from https://css-tricks.com/scooped-corners-in-2018/#svg-fle
     background-color: black;
     transform: scale(0.6);
     position:relative;    
+    text-align:center;
 }
 
 #box {
