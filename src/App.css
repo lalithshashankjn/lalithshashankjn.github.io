@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -35,4 +36,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.carousel-item img {
+  width: 60%;
+  height: 60;
+  object-fit: cover;
+  /* Ensures the image covers the entire area without distorting */
 }
